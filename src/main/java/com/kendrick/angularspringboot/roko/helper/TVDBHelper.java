@@ -50,7 +50,7 @@ public class TVDBHelper {
 		
 	}
 	
-	
+	/*
 	public ArrayList<SearchResult> searchForAnime(String anime) {
 		ArrayList<SearchResult> sr = new ArrayList<SearchResult>();
 		
@@ -66,9 +66,9 @@ public class TVDBHelper {
 		
 		return sr;
 	}
+	*/
 
-
-
+	/*
 	public static Anime getAnimeFromTVDB(SearchResult anime) {
 		String pullSeries = baseCommand + jwtoken + "\" \"https://api.thetvdb.com/series/" + anime.getAnimeId() + "\"";
 
@@ -85,7 +85,7 @@ public class TVDBHelper {
 		
 		return a;
 	}
-
+	*/
 	
 	
 	

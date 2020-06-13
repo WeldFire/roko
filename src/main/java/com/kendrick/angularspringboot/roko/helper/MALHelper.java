@@ -180,7 +180,14 @@ public class MALHelper {
     	
     	//Season and Year, think I just want year
     	String premieredJSON = (String) anime.get("premiered");
-    	int premiered = Integer.parseInt(premieredJSON.substring(premieredJSON.length()-4, premieredJSON.length()));
+    	int premiered = 0;
+    	try {
+    		premiered = Integer.parseInt(premieredJSON.substring(premieredJSON.length()-4, premieredJSON.length()));
+    	}
+    	catch(NumberFormatException e) {
+    		e.printStackTrace();
+    		premiered = 0;
+    	}
     	
     	
     	JSONArray synopsisArr = (JSONArray) anime.get("synopsis");
@@ -236,8 +243,7 @@ public class MALHelper {
     
 	public static ArrayList<Anime> readJSONAnimeSeries(String file) {
 		JSONParser jsonParser = new JSONParser();
-		
-		AnimeSeries series = new AnimeSeries();
+
 		Anime anime = null;
 		ArrayList<Anime> animeList = new ArrayList<Anime>();
 		

@@ -20,16 +20,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kendrick.angularspringboot.roko.exception.ResourceNotFoundException;
+import com.kendrick.angularspringboot.roko.helper.MALHelper;
+import com.kendrick.angularspringboot.roko.helper.TVDBHelper;
 import com.kendrick.angularspringboot.roko.model.Anime;
 import com.kendrick.angularspringboot.roko.model.SearchResult;
 import com.kendrick.angularspringboot.roko.repository.AnimeRepository;
 import com.kendrick.angularspringboot.roko.shared.ProcessRunner;
 
-
 import lombok.extern.log4j.Log4j2;
-
-import com.kendrick.angularspringboot.roko.helper.MALHelper;
-import com.kendrick.angularspringboot.roko.helper.TVDBHelper;
 
 
 //TODO: Review all of the mappings, make sure they are best practice / make sense
@@ -83,6 +81,7 @@ public class AnimeController {
     
     //Fetch Anime information from TVDB
     //Will return a JSON response
+    /*
     @GetMapping("searchTVDB/{name}")
     public ArrayList<SearchResult> searchAnimeFromTVDB(@PathVariable(value = "name") String fetchName)
             throws ResourceNotFoundException {
@@ -102,7 +101,7 @@ public class AnimeController {
         
         return results;
     }
-    
+    */
     
     @PostMapping("anime")
     // When Spring Boot finds an argument annotated with @Valid, it
@@ -131,7 +130,7 @@ public class AnimeController {
     	return animeRepo.save(anime);
     }
     
-    
+    /*
     @PutMapping("addTVDB")
     //Add anime from the search list to the catalog
     public Anime addTVDBAnime(@Valid @RequestBody final SearchResult animeResult) {
@@ -141,6 +140,7 @@ public class AnimeController {
     	//save new anime object
     	return animeRepo.save(anime);
     }
+    */
     
     @PutMapping("anime/{id}")
     public ResponseEntity<Anime> updateAnime(@PathVariable(value = "id") final Long animeId,

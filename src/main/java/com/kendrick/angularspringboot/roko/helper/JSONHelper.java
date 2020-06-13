@@ -100,6 +100,7 @@ public class JSONHelper {
     
     
     //This one seemingly requires special attention since the full thumbnail and series url's are not given
+    /*
     public static SearchResult parseTVDBSearchObject(JSONObject jsonObj, String seriesBaseUrl, String imageBaseUrl) {
 
     	SearchResult anime = new SearchResult();
@@ -121,6 +122,7 @@ public class JSONHelper {
     	
     	return anime;
     }
+    */
     
     
     public static Anime parseTVDBObject(JSONObject jsonObj) {
